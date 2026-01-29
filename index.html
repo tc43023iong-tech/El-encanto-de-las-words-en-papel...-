@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西文賞析・稿紙上的美</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Noto Serif TC', serif;
+            overflow-x: hidden;
+        }
+        .handwriting {
+            font-family: 'ZCOOL+KuaiLe', cursive;
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .rough-border {
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        .floating-delayed {
+            animation: float 4s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        .paper-plane-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @media print {
+            body {
+                background-color: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .grid-bg {
+                opacity: 0.1 !important;
+            }
+            /* Hide animations and unnecessary UI when printing */
+            .floating, .floating-delayed {
+                animation: none !important;
+            }
+            /* Hide the shadows for a cleaner print */
+            .shadow-\[16px_16px_0px_0px_rgba\(0\,0\,0\,1\)\] {
+                box-shadow: none !important;
+                border: 1px solid black !important;
+            }
+            /* Ensure appreciation is visible if active, or hide all appreciation to save space? 
+               Usually, printing should show the main content. Let's make sure the active appreciation is clear. */
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "西文賞析・稿紙上的美",
+  "description": "一個專為小五六學生設計的西班牙美文賞析程式。採用可愛的黑白稿紙風格，提供西中對照、逐句賞析，並結合 Gemini AI 進行深度文學互動。",
+  "requestFramePermissions": []
+}
